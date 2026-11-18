@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="color-scheme" content="dark"/>
+<link rel="icon" href="data:,"/>
+<title>ApexHire Placements — 100% Placement Support for Top MNC Jobs | Draft v1.3</title>
+<meta name="description" content="Job placement consultancy — placements in top MNCs, training & domain-change support. Placement fee only after placement. No upfront fee."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060a1a; --bg2:#0a1030; --panel:rgba(255,255,255,.06); --panel2:rgba(255,255,255,.09);
+  --line:rgba(148,180,255,.18); --ink:#eef2ff; --muted:#a9b4d6; --muted2:#8492b8;
+  --cyan:#22d3ee; --violet:#8b5cf6; --gold:#f5c451; --green:#34d399;
+  --grad:linear-gradient(92deg,#22d3ee,#818cf8 55%,#c084fc);
+  --radius:20px; --header-h:68px;
+  --shadow:0 20px 50px rgba(2,6,24,.55);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Manrope",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4{font-family:"Sora",sans-serif;line-height:1.15;margin:0}
+a{color:inherit}
+img{max-width:100%}
+button,[role="button"],select,summary,input,textarea{font:inherit}
+button,select,summary{min-height:44px}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+section{padding:72px 0;position:relative}
+.sec-head{max-width:720px;margin:0 auto 34px;text-align:center}
+.sec-head h2{font-size:clamp(1.7rem,4.5vw,2.6rem);font-weight:800;letter-spacing:-.02em}
+.sec-head p{color:var(--muted);margin:12px 0 0;font-size:1.02rem}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);border:1px solid var(--line);background:rgba(34,211,238,.07);padding:7px 14px;border-radius:999px;margin-bottom:16px}
+.kicker::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold)}
+/* ---------- Preloader ---------- */
+#preloader{position:fixed;inset:0;z-index:200;background:#05081a;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;transition:opacity .5s,visibility .5s}
+#preloader.done{opacity:0;visibility:hidden}
+.pre-logo{font-family:"Sora";font-size:1.7rem;font-weight:800;letter-spacing:.02em;animation:preIn .8s cubic-bezier(.2,.9,.3,1.2) both}
+.pre-logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pre-bar{width:150px;height:3px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden}
+.pre-bar i{display:block;height:100%;width:40%;border-radius:99px;background:var(--grad);animation:preBar .9s ease-in-out infinite alternate}
+@keyframes preBar{from{transform:translateX(-60%)}to{transform:translateX(260%)}}
+@keyframes preIn{from{opacity:0;transform:scale(.85) translateY(10px)}to{opacity:1;transform:none}}
+.pre-sub{color:var(--muted2);font-size:.8rem;letter-spacing:.22em;text-transform:uppercase}
+/* ---------- Header ---------- */
+header{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--header-h);background:rgba(6,10,26,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.header-in{height:var(--header-h);display:flex;align-items:center;gap:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Sora";font-weight:800;font-size:1.12rem;white-space:nowrap}
+.logo-mark{width:38px;height:38px;border-radius:11px;background:var(--grad);display:grid;place-items:center;color:#0a1030;font-size:1.05rem;box-shadow:0 6px 20px rgba(99,102,241,.5);flex:none}
+.logo small{display:block;font-family:"Manrope";font-weight:700;font-size:.58rem;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.logo .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav.main{display:flex;gap:4px;margin-left:auto}
+nav.main a{text-decoration:none;color:var(--muted);font-weight:700;font-size:.9rem;padding:10px 12px;border-radius:10px;min-height:44px;display:inline-flex;align-items:center}
+nav.main a:hover{color:var(--ink);background:rgba(255,255,255,.06)}
+.head-btns{display:flex;gap:10px;margin-left:8px}
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;text-decoration:none;font-weight:800;font-size:.92rem;padding:12px 20px;border-radius:13px;min-height:48px;transition:transform .2s,box-shadow .2s;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 10px 28px rgba(99,102,241,.45)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(99,102,241,.55)}
+.btn-ghost{background:rgba(255,255,255,.06);color:var(--ink);border:1px solid var(--line)}
+.btn-ghost:hover{background:rgba(255,255,255,.11);transform:translateY(-2px)}
+.btn-gold{background:linear-gradient(92deg,#f5c451,#f59e0b);color:#241a02;box-shadow:0 10px 26px rgba(245,158,11,.35)}
+.btn::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);transition:left .55s ease}
+.btn:hover::after{left:130%}
+.count-badge{background:#fff;color:#312e81;font-size:.72rem;font-weight:800;border-radius:999px;padding:2px 8px;margin-left:2px}
+#hamburger{display:none;margin-left:auto;background:rgba(255,255,255,.07);border:1px solid var(--line);color:var(--ink);width:46px;height:46px;border-radius:12px;cursor:pointer;font-size:1.25rem}
+#mobileMenu{display:none;background:rgba(6,10,26,.97);border-bottom:1px solid var(--line);padding:10px 16px 18px;position:fixed;top:var(--header-h);left:0;right:0;z-index:99}
+#mobileMenu.open{display:block;animation:menuIn .25s ease both}
+@keyframes menuIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+#mobileMenu a{display:flex;align-items:center;min-height:48px;padding:10px 12px;text-decoration:none;font-weight:700;color:var(--ink);border-radius:10px}
+#mobileMenu a:hover{background:rgba(255,255,255,.06)}
+.sample-tag{font-size:.68rem;font-weight:800;letter-spacing:.1em;color:#0a1030;background:var(--gold);border-radius:6px;padding:2px 7px;vertical-align:middle;margin-left:6px;text-transform:uppercase}
+/* ---------- Hero ---------- */
+.hero{padding:calc(var(--header-h) + 56px) 0 84px;overflow:hidden;background:radial-gradient(900px 480px at 85% -10%,rgba(139,92,246,.35),transparent 60%),radial-gradient(800px 500px at -10% 20%,rgba(34,211,238,.22),transparent 60%),linear-gradient(180deg,#070b22,#060a1a)}
+#particles{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.8}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;position:relative}
+.hero h1{font-size:clamp(2.1rem,6vw,3.6rem);font-weight:800;letter-spacing:-.025em}
+.hero h1 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1 .gold{color:var(--gold)}
+.word{display:inline-block;opacity:0;transform:translateY(18px);animation:wordUp .6s cubic-bezier(.2,.8,.3,1) forwards;animation-delay:calc(var(--i)*70ms)}
+@keyframes wordUp{to{opacity:1;transform:none}}
+.hero-sub{color:var(--muted);font-size:1.08rem;margin:20px 0 26px;max-width:540px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);backdrop-filter:blur(8px);border-radius:999px;padding:9px 15px;font-size:.85rem;font-weight:700}
+.badge b{color:var(--green)}
+.hero-cta .btn{white-space:normal;text-align:center;line-height:1.35}
+.counters{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px;max-width:520px}
+.counter{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 14px;text-align:center;backdrop-filter:blur(8px)}
+.counter .num{font-family:"Sora";font-size:1.55rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.counter .lbl{font-size:.76rem;color:var(--muted);font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-top:2px}
+/* glass form card */
+.glass{background:linear-gradient(160deg,rgba(255,255,255,.1),rgba(255,255,255,.04));border:1px solid var(--line);border-radius:24px;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:var(--shadow);padding:26px}
+.glass h3{font-size:1.25rem}
+.glass .sub{color:var(--muted);font-size:.9rem;margin:6px 0 18px}
+.float-card{animation:floaty 6s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.field{position:relative;margin-bottom:14px}
+.field label{position:absolute;top:-8px;left:12px;background:#131a3d;padding:0 7px;font-size:.72rem;font-weight:800;letter-spacing:.05em;color:var(--cyan);border-radius:4px;z-index:1}
+.field input,.field select,.field textarea{width:100%;background:rgba(6,10,26,.55);border:1px solid var(--line);border-radius:13px;color:var(--ink);padding:14px 14px;font-size:.95rem;min-height:50px;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;appearance:none}
+.field textarea{min-height:96px;resize:vertical}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2322d3ee' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(34,211,238,.22),0 0 22px rgba(34,211,238,.15)}
+.field select option{background:#0d1430;color:var(--ink)}
+.seg{display:flex;background:rgba(6,10,26,.55);border:1px solid var(--line);border-radius:13px;padding:4px;gap:4px}
+.seg button{flex:1;border:0;background:transparent;color:var(--muted);font-weight:800;font-size:.9rem;border-radius:9px;cursor:pointer;min-height:42px;transition:.2s}
+.seg button.on{background:var(--grad);color:#fff;box-shadow:0 6px 16px rgba(99,102,241,.4)}
+.form-note{font-size:.8rem;color:var(--muted2);margin-top:10px;text-align:center}
+.success-box{display:none;text-align:center;padding:14px 4px}
+.success-box.show{display:block;animation:popIn .45s cubic-bezier(.2,.9,.3,1.3) both}
+@keyframes popIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+.tick{width:70px;height:70px;margin:0 auto 14px;border-radius:50%;background:rgba(52,211,153,.14);border:2px solid var(--green);display:grid;place-items:center;font-size:2rem;color:var(--green);animation:tickPop .5s cubic-bezier(.2,.9,.3,1.4) both}
+@keyframes tickPop{from{transform:scale(.4);opacity:0}to{transform:scale(1);opacity:1}}
+/* ---------- Marquee ---------- */
+.marquee-band{padding:26px 0;border-block:1px solid var(--line);background:rgba(255,255,255,.03);overflow:hidden}
+.marquee-band p{text-align:center;color:var(--muted);font-weight:700;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;margin:0 0 16px}
+.marquee{display:flex;gap:14px;width:max-content;animation:scrollX 26s linear infinite}
+.marquee-band:hover .marquee{animation-play-state:paused}
+@keyframes scrollX{to{transform:translateX(-50%)}}
+.mnc{font-family:"Sora";font-weight:700;font-size:1.05rem;padding:12px 26px;border:1px solid var(--line);border-radius:999px;background:var(--panel);white-space:nowrap;color:#dbe4ff}
+/* ---------- Reveal ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.3,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+/* ---------- Cards grid ---------- */
+.grid{display:grid;gap:18px}
+.grid.c4{grid-template-columns:repeat(4,1fr)}
+.grid.c3{grid-template-columns:repeat(3,1fr)}
+.grid.c2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px;backdrop-filter:blur(10px);transition:transform .25s,border-color .25s,box-shadow .25s}
+.card:hover{transform:translateY(-5px);border-color:rgba(34,211,238,.5);box-shadow:0 18px 40px rgba(2,6,24,.5),0 0 0 1px rgba(34,211,238,.15)}
+.card .icon{width:52px;height:52px;border-radius:15px;background:linear-gradient(140deg,rgba(34,211,238,.22),rgba(139,92,246,.22));border:1px solid var(--line);display:grid;place-items:center;font-size:1.45rem;margin-bottom:16px}
+.card h3{font-size:1.12rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:.93rem;margin:0}
+.card ul{color:var(--muted);font-size:.93rem;margin:8px 0 0;padding-left:18px}
+.tag{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:rgba(245,197,81,.14);color:var(--gold);border:1px solid rgba(245,197,81,.3)}
+/* ---------- Openings ---------- */
+#openings{background:linear-gradient(180deg,transparent,rgba(99,102,241,.06),transparent)}
+.filters{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:28px}
+.filters button{border:1px solid var(--line);background:var(--panel);color:var(--muted);font-weight:800;padding:11px 20px;border-radius:999px;cursor:pointer;min-height:46px;transition:.2s}
+.filters button:hover{color:var(--ink)}
+.filters button.on{background:var(--grad);color:#fff;border-color:transparent;box-shadow:0 8px 22px rgba(99,102,241,.4)}
+.job{background:linear-gradient(165deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:10px;transition:transform .25s,border-color .25s,box-shadow .25s;animation:jobIn .45s ease both}
+@keyframes jobIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+.job:hover{transform:translateY(-5px);border-color:rgba(192,132,252,.55);box-shadow:0 18px 42px rgba(2,6,24,.55)}
+.job h3{font-size:1.08rem}
+.job .co{color:var(--cyan);font-weight:800;font-size:.85rem;letter-spacing:.03em}
+.job-meta{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;font-size:.86rem;color:var(--muted)}
+.job-meta b{color:var(--ink);font-weight:700}
+.job-tags{display:flex;gap:8px;flex-wrap:wrap}
+.pill{font-size:.72rem;font-weight:800;padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.05)}
+.pill.it{color:var(--cyan);border-color:rgba(34,211,238,.4)}
+.pill.nonit{color:#f0abfc;border-color:rgba(240,171,252,.35)}
+.pill.lvl{color:var(--gold);border-color:rgba(245,197,81,.35)}
+.job .btn{margin-top:auto}
+.jobs-empty{display:none;text-align:center;color:var(--muted);padding:30px}
+/* ---------- Domain paths ---------- */
+.path-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px;overflow:hidden}
+.path-flow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0}
+.path-node{font-weight:800;font-size:.92rem;background:rgba(6,10,26,.6);border:1px solid var(--line);padding:10px 14px;border-radius:12px}
+.path-node.to{border-color:rgba(52,211,153,.5);color:var(--green)}
+.arrow-flow{flex:1;min-width:44px;height:3px;border-radius:99px;background:linear-gradient(90deg,var(--cyan),var(--violet));background-size:200% 100%;animation:flowMove 1.6s linear infinite;position:relative}
+@keyframes flowMove{from{background-position:0 0}to{background-position:200% 0}}
+.arrow-flow::after{content:"›";position:absolute;right:-4px;top:50%;transform:translateY(-54%);color:var(--violet);font-size:1.3rem;font-weight:800}
+/* ---------- Timeline ---------- */
+.timeline{position:relative;max-width:820px;margin:0 auto;padding-left:34px}
+.timeline::before{content:"";position:absolute;left:12px;top:8px;bottom:8px;width:3px;border-radius:99px;background:rgba(255,255,255,.1)}
+.timeline .fill{position:absolute;left:12px;top:8px;width:3px;border-radius:99px;background:var(--grad);height:0;transition:height 1.4s cubic-bezier(.2,.8,.3,1);box-shadow:0 0 14px rgba(129,140,248,.7)}
+.timeline.go .fill{height:calc(100% - 16px)}
+.step{position:relative;padding:0 0 30px 18px;opacity:.35;transform:translateX(10px);transition:.6s}
+.step:last-child{padding-bottom:4px}
+.step.lit{opacity:1;transform:none}
+.step .dot{position:absolute;left:-34px;top:2px;width:26px;height:26px;border-radius:50%;background:#0d1430;border:2px solid var(--line);display:grid;place-items:center;font-size:.75rem;font-weight:800;color:var(--muted);transition:.4s}
+.step.lit .dot{background:var(--grad);color:#fff;border-color:transparent;box-shadow:0 0 18px rgba(129,140,248,.8)}
+.step h3{font-size:1.08rem;margin-bottom:4px}
+.step p{color:var(--muted);margin:0;font-size:.94rem;max-width:600px}
+.step.fee-step h3{color:var(--gold)}
+/* ---------- Path finder ---------- */
+.finder{max-width:760px;margin:0 auto}
+.finder-progress{display:flex;gap:8px;margin-bottom:22px}
+.finder-progress i{flex:1;height:5px;border-radius:99px;background:rgba(255,255,255,.12);transition:.4s}
+.finder-progress i.on{background:var(--grad);box-shadow:0 0 12px rgba(129,140,248,.6)}
+.fstep{display:none}
+.fstep.on{display:block;animation:slideIn .4s cubic-bezier(.2,.8,.3,1) both}
+@keyframes slideIn{from{opacity:0;transform:translateX(34px)}to{opacity:1;transform:none}}
+.fstep.back{display:block;animation:slideBack .4s ease both}
+@keyframes slideBack{from{opacity:0;transform:translateX(-34px)}to{opacity:1;transform:none}}
+.fstep h3{font-size:1.2rem;margin-bottom:16px;text-align:center}
+.opt-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.opt{border:1px solid var(--line);background:rgba(6,10,26,.5);color:var(--ink);border-radius:15px;padding:16px;font-weight:800;cursor:pointer;min-height:56px;transition:.2s;font-size:.95rem}
+.opt:hover{border-color:var(--cyan)}
+.opt.sel{background:var(--grad);color:#fff;border-color:transparent}
+.finder-nav{display:flex;justify-content:space-between;gap:12px;margin-top:22px}
+.result-rec{background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.35);border-radius:16px;padding:18px;margin-top:6px;text-align:left}
+.result-rec h4{color:var(--green);margin-bottom:8px}
+.result-rec ul{margin:0;padding-left:18px;color:var(--muted)}
+.result-rec a{color:var(--cyan);font-weight:700}
+/* ---------- Tracks ---------- */
+.track-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.track-list span{font-size:.88rem;font-weight:700;background:rgba(6,10,26,.55);border:1px solid var(--line);padding:9px 15px;border-radius:999px}
+/* ---------- Trust box ---------- */
+.trust{background:linear-gradient(140deg,rgba(245,197,81,.12),rgba(52,211,153,.08));border:1px solid rgba(245,197,81,.4);border-radius:24px;padding:32px;box-shadow:0 20px 46px rgba(2,6,24,.45)}
+.trust h3{font-size:1.4rem;text-align:center}
+.trust-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px}
+.trust-item{display:flex;gap:12px;align-items:flex-start;background:rgba(6,10,26,.45);border:1px solid var(--line);border-radius:15px;padding:16px}
+.trust-item .ti{font-size:1.3rem;flex:none}
+.trust-item b{display:block}
+.trust-item span{color:var(--muted);font-size:.9rem}
+/* ---------- Testimonials ---------- */
+.quote{font-size:2rem;color:var(--violet);line-height:1;font-family:"Sora"}
+.stars{color:var(--gold);letter-spacing:3px;font-size:.9rem;margin:8px 0}
+.person{display:flex;align-items:center;gap:12px;margin-top:16px}
+.avatar{width:46px;height:46px;border-radius:50%;background:var(--grad);display:grid;place-items:center;font-family:"Sora";font-weight:800;color:#fff;flex:none}
+.person b{display:block;font-size:.95rem}
+.person span{color:var(--muted2);font-size:.82rem}
+/* ---------- FAQ ---------- */
+.faq{max-width:820px;margin:0 auto;display:grid;gap:12px}
+.faq-item{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:14px;background:none;border:0;color:var(--ink);font-weight:800;font-size:1rem;text-align:left;padding:18px 20px;cursor:pointer;min-height:56px}
+.faq-q .chev{transition:transform .3s;color:var(--cyan);font-size:1.2rem;flex:none}
+.faq-item.open .faq-q .chev{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-a p{color:var(--muted);margin:0;padding:0 20px 18px;font-size:.94rem}
+/* ---------- Apply form ---------- */
+.apply-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+.apply-grid .full{grid-column:1/-1}
+.hidden-field{display:none!important}
+/* ---------- Footer ---------- */
+footer{border-top:1px solid var(--line);background:#05081a;padding:52px 0 110px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+footer h4{margin-bottom:14px;font-size:1rem}
+footer a{color:var(--muted);text-decoration:none;display:block;padding:5px 0;font-size:.93rem}
+footer a:hover{color:var(--cyan)}
+footer p{color:var(--muted);font-size:.93rem}
+.disclaimer{margin-top:34px;border-top:1px solid var(--line);padding-top:20px;color:var(--muted2);font-size:.8rem;line-height:1.7}
+/* ---------- Floating ---------- */
+.wa-float{position:fixed;left:16px;bottom:86px;z-index:90;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;text-decoration:none;box-shadow:0 12px 30px rgba(37,211,102,.45);font-size:1.55rem;transition:transform .2s}
+.wa-float:hover{transform:scale(1.08)}
+.chat-float{position:fixed;right:16px;bottom:86px;z-index:90;display:flex;align-items:center;gap:9px;background:var(--grad);color:#fff;border:0;border-radius:999px;padding:14px 20px;font-weight:800;cursor:pointer;box-shadow:0 12px 30px rgba(99,102,241,.5);min-height:56px}
+.chat-float::before{content:"";position:absolute;inset:-5px;border-radius:999px;border:2px solid rgba(129,140,248,.55);animation:pulseRing 2s ease-out infinite}
+@keyframes pulseRing{0%{transform:scale(.92);opacity:1}100%{transform:scale(1.18);opacity:0}}
+.chat-panel{display:none;position:fixed;right:16px;bottom:154px;z-index:95;width:min(340px,calc(100vw - 32px));background:#0d1433;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:24px;opacity:0;visibility:hidden;transform:translateY(16px) scale(.94);transform-origin:bottom right;transition:.35s cubic-bezier(.2,.9,.3,1.25)}
+.chat-panel.open{opacity:1;visibility:visible;transform:none}
+.chat-panel h3{font-size:1.08rem;margin-bottom:8px}
+.chat-panel p{color:var(--muted);font-size:.92rem;margin:0 0 16px}
+.chat-panel .row{display:grid;gap:10px}
+.chat-close{position:absolute;top:10px;right:10px;background:rgba(255,255,255,.08);border:0;color:var(--ink);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:1rem}
+/* ---------- Sticky mobile bar ---------- */
+.sticky-bar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:100;background:rgba(7,11,30,.94);backdrop-filter:blur(16px);border-top:1px solid var(--line);padding:8px 10px calc(8px + env(safe-area-inset-bottom))}
+.sticky-bar a{flex:1;text-align:center;text-decoration:none;font-weight:800;font-size:.85rem;padding:12px 6px;border-radius:12px;color:var(--ink);background:rgba(255,255,255,.06);min-height:48px;display:flex;align-items:center;justify-content:center;gap:6px}
+.sticky-bar a.primary{background:var(--grad);color:#fff}
+.sticky-bar{display:none;gap:8px}
+/* ---------- Responsive ---------- */
+@media(max-width:1020px){
+  nav.main{display:none}.head-btns .btn-ghost{display:none}
+  #hamburger{display:grid;place-items:center}
+  .grid.c4{grid-template-columns:repeat(2,1fr)}
+  .grid.c3{grid-template-columns:repeat(2,1fr)}
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  section{padding:54px 0}
+  .grid.c4,.grid.c3,.grid.c2{grid-template-columns:1fr}
+  .counters{grid-template-columns:repeat(3,1fr);gap:8px}
+  .counter .num{font-size:1.15rem}
+  .apply-grid{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:1fr}
+  .opt-grid{grid-template-columns:1fr}
+  .head-btns .btn-primary{display:none}
+  .logo{font-size:1rem}
+  .sticky-bar{display:flex}
+  .wa-float{bottom:150px;width:48px;height:48px;font-size:1.25rem}
+  .chat-float{bottom:150px;width:52px;height:52px;padding:0;border-radius:50%;justify-content:center}
+  .chat-float .chat-lbl{display:none}
+  .chat-panel{bottom:214px}
+  .hero{padding-top:calc(var(--header-h) + 36px);padding-bottom:110px}
+  .hero-cta{flex-direction:column}
+  .hero-cta .btn{width:100%}
+  footer{padding-bottom:130px}
+  .job-meta{grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal,.word,.step{opacity:1;transform:none}
+  .marquee{animation:none;flex-wrap:wrap;width:auto}
+}
+</style>
+</head>
+<body>
+
+<div id="preloader" aria-hidden="true">
+  <div class="pre-logo">Apex<span>Hire</span> Placements</div>
+  <div class="pre-bar"><i></i></div>
+  <div class="pre-sub">Draft v1.3</div>
+</div>
+
+<header>
+  <div class="wrap header-in">
+    <a class="logo" href="#top"><span class="logo-mark">A</span><span>Apex<span class="grad">Hire</span><small>Placements · Sample Name</small></span></a>
+    <nav class="main" aria-label="Main">
+      <a href="#who">Who It's For</a><a href="#services">Services</a><a href="#domain">Change Domain</a><a href="#how">How It Works</a><a href="#faq">FAQ</a>
+    </nav>
+    <div class="head-btns">
+      <a class="btn btn-ghost" href="#openings">💼 Current Openings <span class="count-badge">14 Sample</span></a>
+      <a class="btn btn-primary" href="#apply">Apply Now</a>
+    </div>
+    <button id="hamburger" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+<div id="mobileMenu">
+  <a href="#openings">💼 Current Openings (14)</a>
+  <a href="#who">Who It's For</a><a href="#services">Services</a><a href="#domain">Change Your Domain</a>
+  <a href="#how">How It Works</a><a href="#path">Find Your Path</a><a href="#training">Training</a><a href="#faq">FAQ</a>
+  <a href="#apply" style="color:var(--gold)">→ Apply Now</a>
+</div>
+
+<main id="top">
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker">Job Placement Consultancy · Draft v1.3</span>
+      <h1 id="heroTitle">Get Placed in <span class="grad">Top MNCs.</span> Pay Only <span class="gold">After</span> You Get the Job.</h1>
+      <p class="hero-sub">100% placement support for freshers and experienced professionals — with training and complete hand-holding if you want to <strong style="color:var(--ink)">change your domain</strong>. Free counselling. No upfront fee. Ever.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="#openings">💼 View Current Openings <span class="count-badge">14 Sample</span></a>
+        <a class="btn btn-primary" href="#apply">Apply Now →</a>
+      </div>
+      <div class="badges">
+        <span class="badge"><b>✓</b> No Upfront Fee</span>
+        <span class="badge"><b>✓</b> Top MNCs</span>
+        <span class="badge"><b>✓</b> Training Available</span>
+        <span class="badge"><b>✓</b> Support Until Placed</span>
+      </div>
+      <div class="counters">
+        <div class="counter"><div class="num"><span data-count="100">0</span>%</div><div class="lbl">Placement Support</div></div>
+        <div class="counter"><div class="num"><span data-count="8">0</span></div><div class="lbl">Top MNC Networks</div></div>
+        <div class="counter"><div class="num"><span data-count="14">0</span></div><div class="lbl">Sample Openings in Draft</div></div>
+      </div>
+    </div>
+    <div class="glass float-card" id="callbackCard">
+      <h3>Request a Free Callback 📞</h3>
+      <p class="sub">Talk to a counsellor in 10 seconds. No charge, no obligation.</p>
+      <form id="miniForm" novalidate>
+        <div class="field"><label for="miniName">Your Name</label><input id="miniName" type="text" placeholder="e.g. Priya Sharma" required autocomplete="name"></div>
+        <div class="field"><label for="miniPhone">Mobile / WhatsApp</label><input id="miniPhone" type="tel" placeholder="e.g. 98765 43210" required autocomplete="tel"></div>
+        <div class="field"><label>I am a</label>
+          <div class="seg" id="miniSeg">
+            <button type="button" class="on" data-v="Fresher">Fresher</button>
+            <button type="button" data-v="Experienced">Experienced</button>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit" style="width:100%">Request a Callback →</button>
+        <p class="form-note">Sample draft — this connects to WhatsApp once your real number is added.</p>
+      </form>
+      <div class="success-box" id="miniSuccess">
+        <div class="tick">✓</div>
+        <h3>Request Received!</h3>
+        <p class="sub">Our counsellor will call you back shortly. Want a faster reply?</p>
+        <a class="btn btn-gold" id="miniWa" href="#" target="_blank" rel="noopener" style="width:100%">Continue on WhatsApp →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MNC MARQUEE ================= -->
+<div class="marquee-band" aria-label="Companies">
+  <p>Placement opportunities across top MNCs</p>
+  <div class="marquee" id="marquee"></div>
+</div>
+
+<!-- ================= WHO IT'S FOR ================= -->
+<section id="who">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="kicker">Who It's For</span><h2>Wherever You're Starting From, There's a Path</h2><p>Four kinds of candidates walk in. All four walk out with interview calls.</p></div>
+    <div class="grid c4">
+      <div class="card reveal"><div class="icon">🎓</div><h3>Freshers</h3><p>Just graduated? Get trained, interview-ready and placed into entry-level MNC roles built for beginners.</p></div>
+      <div class="card reveal d1"><div class="icon">💼</div><h3>Experienced</h3><p>Already working? Move to a bigger brand, better package and a role that matches your experience.</p></div>
+      <div class="card reveal d2"><div class="icon">⏳</div><h3>Career Gap</h3><p>A gap on your resume is not the end. We rebuild your profile and prepare you to explain it with confidence.</p></div>
+      <div class="card reveal d3"><div class="icon">🔀</div><h3>Domain Changers</h3><p>Stuck in the wrong field? Switch to IT or a new Non-IT domain with structured training and full support.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OPENINGS ================= -->
+<section id="openings">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="kicker">Current Openings</span><h2>Sample Openings — Apply in One Tap</h2><p><strong style="color:var(--gold)">Draft demonstration listings</strong> — these sample openings show how live roles will appear. Tap a filter, pick a role, and the Apply form fills itself in for you.</p></div>
+    <div class="filters reveal" role="tablist" aria-label="Filter openings">
+      <button class="on" data-filter="all">All Openings</button>
+      <button data-filter="IT">IT</button>
+      <button data-filter="Non-IT">Non-IT</button>
+      <button data-filter="Fresher">Freshers</button>
+      <button data-filter="Experienced">Experienced</button>
+    </div>
+    <div class="grid c3" id="jobsGrid"></div>
+    <p class="jobs-empty" id="jobsEmpty">No openings in this filter right now — try another tab or apply for General Placement below.</p>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="kicker">Our Services</span><h2>Everything Between You and Your Offer Letter</h2></div>
+    <div class="grid c3">
+      <div class="card reveal"><div class="icon">🎯</div><h3>Placement</h3><p>Direct interview scheduling with top MNCs and leading companies across IT and Non-IT roles.</p></div>
+      <div class="card reveal d1"><div class="icon">📚</div><h3>Training</h3><p>Job-focused training in your chosen domain — practical skills, real projects, interview-level depth.</p></div>
+      <div class="card reveal d2"><div class="icon">🔀</div><h3>Domain-Change Support</h3><p>A complete switch plan: skill mapping, training, profile rebuild and interviews in your new domain.</p></div>
+      <div class="card reveal"><div class="icon">🎤</div><h3>Interview Preparation</h3><p>Mock interviews, HR round practice, technical revision and honest feedback before the real thing.</p></div>
+      <div class="card reveal d1"><div class="icon">📄</div><h3>Resume Building</h3><p>An ATS-friendly resume that presents your skills — and your story — the way MNC recruiters scan for.</p></div>
+      <div class="card reveal d2"><div class="icon">🤝</div><h3>Support Until Placed</h3><p>One counsellor stays with you from registration to joining day. You never chase us for an update.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CHANGE DOMAIN ================= -->
+<section id="domain" style="background:linear-gradient(180deg,transparent,rgba(34,211,238,.05),transparent)">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="kicker">Change Your Domain</span><h2>Your Past Domain Doesn't Decide Your Future</h2><p>Real switch paths our counsellors build every week — training and support included at every step.</p></div>
+    <div class="grid c3">
+      <div class="path-card reveal"><span class="tag">Popular Switch</span><div class="path-flow"><span class="path-node">Support / Non-IT</span><span class="arrow-flow"></span><span class="path-node to">IT Testing</span></div><p style="color:var(--muted);margin:0;font-size:.93rem">Manual + Automation testing training, live project practice, and interviews with product &amp; service MNCs.</p><p style="margin:12px 0 0;font-weight:800;color:var(--green);font-size:.88rem">✓ Training + Support Included</p></div>
+      <div class="path-card reveal d1"><span class="tag">Popular Switch</span><div class="path-flow"><span class="path-node">BPO / Voice</span><span class="arrow-flow"></span><span class="path-node to">HR / Operations</span></div><p style="color:var(--muted);margin:0;font-size:.93rem">Your people skills become your career. HR process training, documentation practice and recruiter shadowing.</p><p style="margin:12px 0 0;font-weight:800;color:var(--green);font-size:.88rem">✓ Training + Support Included</p></div>
+      <div class="path-card reveal d2"><span class="tag">High Growth</span><div class="path-flow"><span class="path-node">Any Background</span><span class="arrow-flow"></span><span class="path-node to">Data / Software</span></div><p style="color:var(--muted);margin:0;font-size:.93rem">Start from fundamentals — programming or data basics, guided projects, and a portfolio recruiters can verify.</p><p style="margin:12px 0 0;font-weight:800;color:var(--green);font-size:.88rem">✓ Training + Support Included</p></div>
+    </div>
+    <div style="text-align:center;margin-top:28px" class="reveal"><a class="btn btn-primary" href="#path">Find Your Switch Path →</a></div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="kicker">How It Works</span><h2>Five Steps. Fee Only at the Very End.</h2></div>
+    <div class="timeline" id="timeline"><div class="fill"></div>
+      <div class="step"><span class="dot">1</span><h3>Register</h3><p>Fill the Apply form or request a callback. Takes less than two minutes.</p></div>
+      <div class="step"><span class="dot">2</span><h3>Free Counselling &amp; Profile Review</h3><p>We understand your background, goals and gaps — and map the fastest route to placement. Completely free.</p></div>
+      <div class="step"><span class="dot">3</span><h3>Training — Only If Needed</h3><p>Freshers, career-gap and domain-change candidates get focused training. If you're already job-ready, we skip straight ahead.</p></div>
+      <div class="step"><span class="dot">4</span><h3>Interviews with MNCs</h3><p>Scheduled interviews with preparation before every round — technical, HR and managerial.</p></div>
+      <div class="step"><span class="dot">5</span><h3>Offer &amp; Joining</h3><p>You receive your offer, complete joining formalities, and start your new role.</p></div>
+      <div class="step fee-step"><span class="dot">₹</span><h3>Pay the Fee — Only After Placement</h3><p>The placement fee becomes applicable only after you are successfully placed. Nothing before. That's the deal.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FIND YOUR PATH ================= -->
+<section id="path" style="background:linear-gradient(180deg,transparent,rgba(139,92,246,.06),transparent)">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="kicker">Interactive Checker</span><h2>Find Your Path in 3 Taps</h2><p>Answer three quick questions and get your recommended openings and training path instantly.</p></div>
+    <div class="glass finder reveal">
+      <div class="finder-progress"><i class="on" id="fp1"></i><i id="fp2"></i><i id="fp3"></i></div>
+      <div class="fstep on" data-step="1"><h3>1 · What is your qualification?</h3>
+        <div class="opt-grid">
+          <button class="opt" data-group="qual" data-v="B.Tech / B.E">B.Tech / B.E</button>
+          <button class="opt" data-group="qual" data-v="Any Degree">Any Degree (B.Sc / B.Com / B.A…)</button>
+          <button class="opt" data-group="qual" data-v="MBA / PG">MBA / Post Graduate</button>
+          <button class="opt" data-group="qual" data-v="Diploma / 12th+">Diploma / 12th &amp; Above</button>
+        </div>
+      </div>
+      <div class="fstep" data-step="2"><h3>2 · Are you a fresher or experienced?</h3>
+        <div class="opt-grid">
+          <button class="opt" data-group="level" data-v="Fresher">🌱 Fresher</button>
+          <button class="opt" data-group="level" data-v="Experienced">💼 Experienced</button>
+        </div>
+      </div>
+      <div class="fstep" data-step="3"><h3>3 · Which side interests you?</h3>
+        <div class="opt-grid">
+          <button class="opt" data-group="cat" data-v="IT">💻 IT Jobs</button>
+          <button class="opt" data-group="cat" data-v="Non-IT">🏢 Non-IT Jobs</button>
+        </div>
+      </div>
+      <div class="fstep" data-step="4"><h3>✅ Your Recommended Path</h3>
+        <div class="result-rec"><h4 id="recTitle">Your path</h4><ul id="recList"></ul></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+          <button class="btn btn-gold" id="recView" type="button">View My Openings →</button>
+          <a class="btn btn-primary" href="#apply">Apply Now</a>
+        </div>
+      </div>
+      <div class="finder-nav">
+        <button class="btn btn-ghost" id="finderBack" type="button" style="visibility:hidden">← Back</button>
+        <button class="btn btn-ghost" id="finderRestart" type="button" style="visibility:hidden">↺ Start Again</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRAINING TRACKS ================= -->
+<section id="training">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="kicker">Training &amp; Domains</span><h2>Pick a Track. We Train You For It.</h2></div>
+    <div class="grid c2">
+      <div class="card reveal"><div class="icon">💻</div><h3>IT Tracks</h3><div class="track-list"><span>Java</span><span>Python</span><span>Full Stack</span><span>Frontend</span><span>Testing — Manual</span><span>Testing — Automation</span><span>Data Analyst</span><span>Data Science</span><span>Cloud / DevOps</span><span>Technical Support</span></div></div>
+      <div class="card reveal d1"><div class="icon">🏢</div><h3>Non-IT Tracks</h3><div class="track-list"><span>HR</span><span>Customer Support / BPO — Voice</span><span>BPO — Non-Voice</span><span>Sales / Business Development</span><span>Marketing</span><span>Finance / Accounts</span><span>Back Office / Operations</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY + TRUST ================= -->
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="kicker">Why Choose Us</span><h2>Built on One Simple Promise</h2></div>
+    <div class="grid c3" style="margin-bottom:26px">
+      <div class="card reveal"><div class="icon">🛡️</div><h3>Fee After Placement</h3><p>Our fee applies only after you're placed. If we don't place you, you don't pay a placement fee. Our success is tied to yours.</p></div>
+      <div class="card reveal d1"><div class="icon">🏆</div><h3>100% Placement Commitment</h3><p>We keep scheduling interviews and preparing you until you are placed — not for a fixed number of attempts.</p></div>
+      <div class="card reveal d2"><div class="icon">👤</div><h3>Personal Support Till Joining</h3><p>A named counsellor, honest updates, and preparation before every single interview round.</p></div>
+    </div>
+    <div class="trust reveal">
+      <h3>💰 The Fee &amp; Trust Box — In Plain Words</h3>
+      <div class="trust-grid">
+        <div class="trust-item"><span class="ti">🆓</span><div><b>Free Counselling</b><span>Profile review and career guidance cost nothing.</span></div></div>
+        <div class="trust-item"><span class="ti">🚫</span><div><b>No Upfront Placement Fee</b><span>We never ask for a placement fee before your job.</span></div></div>
+        <div class="trust-item"><span class="ti">✅</span><div><b>Fee Only After You Join</b><span>The placement fee is applicable only after successful placement.</span></div></div>
+        <div class="trust-item"><span class="ti">🏢</span><div><b>Final Selection Is by the Employer</b><span>Interviews and final hiring decisions are made by the company — we prepare and place you for them.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section id="stories">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="kicker">Success Stories</span><h2>Placed. And Ready to Say So.</h2><p>Sample stories for this draft — real candidate stories will replace these at launch.</p></div>
+    <div class="grid c3">
+      <div class="card reveal"><div class="quote">“</div><div class="stars">★★★★★</div><p style="color:var(--muted)">I was a fresher with zero interview calls for eight months. After training here, I got three MNC interviews in two weeks and joined as a QA trainee. <span class="tag" style="margin-left:4px">Sample</span></p><div class="person"><span class="avatar">S</span><div><b>Sample Candidate — Sneha</b><span>QA Trainee · Fresher → IT</span></div></div></div>
+      <div class="card reveal d1"><div class="quote">“</div><div class="stars">★★★★★</div><p style="color:var(--muted)">I switched from BPO voice support to HR operations. The domain-change plan was clear from day one, and I paid the fee only after joining. <span class="tag" style="margin-left:4px">Sample</span></p><div class="person"><span class="avatar">R</span><div><b>Sample Candidate — Rahul</b><span>HR Operations · Domain Change</span></div></div></div>
+      <div class="card reveal d2"><div class="quote">“</div><div class="stars">★★★★★</div><p style="color:var(--muted)">After a two-year career gap I thought MNCs were closed to me. Mock interviews rebuilt my confidence — I'm a data analyst today. <span class="tag" style="margin-left:4px">Sample</span></p><div class="person"><span class="avatar">A</span><div><b>Sample Candidate — Anitha</b><span>Data Analyst · Career Gap</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="kicker">FAQ</span><h2>Questions, Answered Honestly</h2></div>
+    <div class="faq reveal">
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Do I have to pay anything in advance?<span class="chev">⌄</span></button><div class="faq-a"><p>No. Counselling is free and the placement fee is applicable only after you are successfully placed and join. We will always explain any training-related terms clearly before you start — no surprises.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Can I change my domain — for example, from Non-IT to IT?<span class="chev">⌄</span></button><div class="faq-a"><p>Yes — that's one of our specialities. Your counsellor maps your current skills to a target domain, you complete focused training in it, and we schedule interviews in the new domain with full preparation support.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Is training available if I'm not job-ready yet?<span class="chev">⌄</span></button><div class="faq-a"><p>Yes. Training is available across IT tracks (Java, Python, Full Stack, Testing, Data, Cloud/DevOps and more) and Non-IT tracks (HR, BPO, Sales, Accounts, Operations). If you're already job-ready, you can skip training and go straight to interviews.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">How long does placement take?<span class="chev">⌄</span></button><div class="faq-a"><p>It depends on your readiness and the domain. Job-ready candidates can start interviews within days; candidates who need training or a domain change typically take a few weeks of preparation first. Your counsellor gives you a realistic timeline after your free profile review.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Who can apply?<span class="chev">⌄</span></button><div class="faq-a"><p>Freshers, experienced professionals, candidates with a career gap, and anyone planning a domain change. If you're unsure whether you qualify for a role, apply for General Placement and the free counselling will map it out for you. Final selection is always by the employer company.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= APPLY ================= -->
+<section id="apply" style="background:linear-gradient(180deg,transparent,rgba(99,102,241,.07),transparent)">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="kicker">Apply Now</span><h2>Start Your Placement Journey</h2><p>Fill this in once — your counsellor does the rest. In this draft, submitting prepares a WhatsApp message with your details.</p></div>
+    <div class="glass reveal" style="max-width:860px;margin:0 auto">
+      <form id="applyForm" novalidate>
+        <div class="apply-grid">
+          <div class="field"><label for="fName">Full Name *</label><input id="fName" required placeholder="Your full name" autocomplete="name"></div>
+          <div class="field"><label for="fPhone">Mobile / WhatsApp *</label><input id="fPhone" type="tel" required placeholder="10-digit mobile number" autocomplete="tel"></div>
+          <div class="field full"><label for="fEmail">Email</label><input id="fEmail" type="email" placeholder="you@example.com" autocomplete="email"></div>
+          <div class="field"><label>I am a *</label><div class="seg" id="levelSeg"><button type="button" class="on" data-v="Fresher">Fresher</button><button type="button" data-v="Experienced">Experienced</button></div></div>
+          <div class="field hidden-field" id="expYearsField"><label for="fExpYears">Experience</label><select id="fExpYears"><option>0–1 years</option><option>1–3 years</option><option>3–5 years</option><option>5+ years</option></select></div>
+          <div class="field"><label>Interested Category *</label><div class="seg" id="catSeg"><button type="button" class="on" data-v="IT">IT</button><button type="button" data-v="Non-IT">Non-IT</button></div></div>
+          <div class="field"><label for="fDomain">Interested Domain *</label><select id="fDomain"></select></div>
+          <div class="field"><label for="fCurrent">Current Domain (if any)</label><input id="fCurrent" placeholder="e.g. BPO Voice, Mechanical, Sales"></div>
+          <div class="field"><label for="fQual">Qualification</label><select id="fQual"><option>B.Tech / B.E</option><option>Any Degree</option><option>MBA / Post Graduate</option><option>Diploma</option><option>12th &amp; Above</option><option>Other</option></select></div>
+          <div class="field"><label for="fTraining">Do you need training?</label><select id="fTraining"><option>Yes</option><option>No</option><option>Not sure — advise me</option></select></div>
+          <div class="field"><label for="fChange">Are you changing your domain?</label><select id="fChange"><option>No</option><option>Yes</option></select></div>
+          <div class="field"><label for="fLoc">Preferred Location</label><input id="fLoc" placeholder="e.g. Hyderabad, Bengaluru, Remote"></div>
+          <div class="field"><label for="fOpening">Applying For</label><select id="fOpening"></select></div>
+          <div class="field full"><label for="fMsg">Message (optional)</label><textarea id="fMsg" placeholder="Anything we should know — career gap, notice period, target role…"></textarea></div>
+        </div>
+        <button class="btn btn-primary" type="submit" style="width:100%;margin-top:6px">Submit Application →</button>
+        <p class="form-note">🔒 Draft form — details open in WhatsApp to the consultancy's number once it's added. No fee is charged for applying.</p>
+      </form>
+      <div class="success-box" id="applySuccess">
+        <div class="tick">✓</div>
+        <h3>Application Ready!</h3>
+        <p class="sub">Tap below to send your details on WhatsApp — your counsellor will take it from there.</p>
+        <a class="btn btn-gold" id="applyWa" href="#" target="_blank" rel="noopener" style="width:100%">Send via WhatsApp →</a>
+        <button class="btn btn-ghost" id="applyAgain" type="button" style="width:100%;margin-top:10px">Fill Another Application</button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="#top" style="margin-bottom:12px"><span class="logo-mark">A</span><span>Apex<span class="grad">Hire</span></span></a>
+        <p>Job placement consultancy for top MNC careers — training, domain-change support and a simple promise: <strong style="color:var(--gold)">fee only after placement.</strong></p>
+        <p style="margin-top:10px"><span class="tag">Draft v1.3 · Sample name &amp; contacts — to be replaced at launch</span></p>
+      </div>
+      <div><h4>Explore</h4><a href="#openings">Current Openings</a><a href="#services">Services</a><a href="#domain">Change Your Domain</a><a href="#path">Find Your Path</a><a href="#training">Training Tracks</a><a href="#apply">Apply Now</a></div>
+      <div><h4>Contact (Placeholder)</h4><a href="tel:+919000000000">📞 +91 90000 00000</a><a href="https://wa.me/919000000000" target="_blank" rel="noopener">💬 WhatsApp Us</a><a href="mailto:hello@example.com">✉️ hello@example.com</a><a href="#top">📍 Your City, India (Pan-India placements)</a></div>
+    </div>
+    <p class="disclaimer">Disclaimer: ApexHire Placements is a sample name used for this draft website (v1.3); contact details are placeholders. We provide placement assistance, training and interview preparation. Final selection and hiring decisions rest solely with the employer company. The placement fee is applicable only after successful placement — no placement fee is charged in advance. Openings shown are sample listings for demonstration and will be updated with live roles.</p>
+  </div>
+</footer>
+
+<!-- Floating buttons -->
+<a class="wa-float" href="https://wa.me/919000000000?text=Hi%2C%20I%20want%20to%20know%20about%20placements" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+<button class="chat-float" id="chatBtn" aria-expanded="false">🤖<span class="chat-lbl"> Chat with us</span></button>
+<!-- Chat panel is created by script when the button is tapped (dummy placeholder for the future chatbot) -->
+<div id="chatMount"></div>
+
+<!-- Sticky mobile bar -->
+<nav class="sticky-bar" aria-label="Quick actions">
+  <a href="tel:+919000000000">📞 Call</a>
+  <a href="#openings">💼 Openings · 14</a>
+  <a class="primary" href="#apply">Apply Now</a>
+</nav>
+
+<script>
+(function(){
+"use strict";
+var WA_NUMBER="919000000000"; // PLACEHOLDER — replace with the real WhatsApp number at launch
+var reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* Preloader */
+window.addEventListener("load",function(){setTimeout(function(){document.getElementById("preloader").classList.add("done")},650)});
+setTimeout(function(){document.getElementById("preloader").classList.add("done")},2200);
+
+/* Hero headline word reveal */
+var h1=document.getElementById("heroTitle");
+(function(){
+  var nodes=[].slice.call(h1.childNodes),out="",i=0;
+  nodes.forEach(function(n){
+    if(n.nodeType===3){n.textContent.split(/\s+/).filter(Boolean).forEach(function(w){out+='<span class="word" style="--i:'+(i++)+'">'+w+'</span> '});}
+    else{var cls=n.className||"";n.textContent.split(/\s+/).filter(Boolean).forEach(function(w){out+='<span class="word '+cls+'" style="--i:'+(i++)+'">'+w+'</span> '});}
+  });
+  h1.innerHTML=out;
+})();
+
+/* Particles */
+(function(){
+  if(reduceMotion)return;
+  var c=document.getElementById("particles"),ctx=c.getContext("2d"),pts=[],W,H;
+  function size(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight}
+  size();window.addEventListener("resize",size);
+  for(var i=0;i<36;i++)pts.push({x:Math.random(),y:Math.random(),r:Math.random()*2+0.6,s:Math.random()*0.00045+0.00015,o:Math.random()*0.5+0.2});
+  (function loop(){
+    ctx.clearRect(0,0,W,H);
+    pts.forEach(function(p){p.y-=p.s;if(p.y<-0.02){p.y=1.02;p.x=Math.random()}
+      ctx.beginPath();ctx.arc(p.x*W,p.y*H,p.r,0,7);ctx.fillStyle="rgba(140,180,255,"+p.o+")";ctx.fill();});
+    requestAnimationFrame(loop);
+  })();
+})();
+
+/* Marquee */
+(function(){
+  var names=["TCS","Infosys","Wipro","Accenture","Capgemini","HCLTech","Tech Mahindra","Cognizant"];
+  var html=names.map(function(n){return '<span class="mnc">'+n+'</span>'}).join("");
+  document.getElementById("marquee").innerHTML=html+html;
+})();
+
+/* Reveal on scroll */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:0.04,rootMargin:"0px 0px 12% 0px"});
+document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)});
+/* Failsafe: never leave a section invisible */
+setTimeout(function(){document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in")})},3000);
+
+/* Counters */
+var cio=new IntersectionObserver(function(es){es.forEach(function(e){
+  if(!e.isIntersecting)return;cio.unobserve(e.target);
+  var target=+e.target.getAttribute("data-count"),t0=null;
+  function tick(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/1400,1);e.target.textContent=Math.round(target*(0.2+0.8*p)* (p<1?1:1) * (p===1?1:1));if(p<1)requestAnimationFrame(tick);else e.target.textContent=target}
+  if(reduceMotion){e.target.textContent=target}else requestAnimationFrame(tick);
+})},{threshold:0.6});
+document.querySelectorAll("[data-count]").forEach(function(el){cio.observe(el)});
+
+/* Hamburger */
+var ham=document.getElementById("hamburger"),mm=document.getElementById("mobileMenu");
+ham.addEventListener("click",function(){var open=mm.classList.toggle("open");ham.setAttribute("aria-expanded",open);ham.textContent=open?"✕":"☰"});
+mm.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){mm.classList.remove("open");ham.textContent="☰"})});
+
+/* Segmented controls helper */
+function seg(id,cb){
+  var el=document.getElementById(id),val=el.querySelector(".on").getAttribute("data-v");
+  el.querySelectorAll("button").forEach(function(b){b.addEventListener("click",function(){
+    el.querySelectorAll("button").forEach(function(x){x.classList.remove("on")});b.classList.add("on");val=b.getAttribute("data-v");if(cb)cb(val);
+  })});
+  return function(){return val};
+}
+
+/* ===== Jobs data ===== */
+var JOBS=[
+ {t:"Trainee Software Developer",cat:"IT",lvl:"Fresher",loc:"Hyderabad",mode:"Hybrid",exp:"0 yrs",vac:12,posted:"12 Nov 2026"},
+ {t:"Junior Java Developer",cat:"IT",lvl:"Fresher",loc:"Bengaluru",mode:"Office",exp:"0–1 yrs",vac:8,posted:"13 Nov 2026"},
+ {t:"QA Testing Trainee",cat:"IT",lvl:"Fresher",loc:"Chennai",mode:"Hybrid",exp:"0 yrs",vac:15,posted:"11 Nov 2026"},
+ {t:"Java Developer (2–5 yrs)",cat:"IT",lvl:"Experienced",loc:"Pune",mode:"Hybrid",exp:"2–5 yrs",vac:6,posted:"14 Nov 2026"},
+ {t:"Automation Tester",cat:"IT",lvl:"Experienced",loc:"Bengaluru",mode:"Remote",exp:"2–4 yrs",vac:5,posted:"10 Nov 2026"},
+ {t:"Data Analyst",cat:"IT",lvl:"Experienced",loc:"Hyderabad",mode:"Hybrid",exp:"1–3 yrs",vac:7,posted:"13 Nov 2026"},
+ {t:"Cloud / DevOps Engineer",cat:"IT",lvl:"Experienced",loc:"Remote — India",mode:"Remote",exp:"2–5 yrs",vac:4,posted:"09 Nov 2026"},
+ {t:"Customer Support Associate",cat:"Non-IT",lvl:"Fresher",loc:"Hyderabad",mode:"Office",exp:"0 yrs",vac:25,posted:"14 Nov 2026"},
+ {t:"HR Trainee",cat:"Non-IT",lvl:"Fresher",loc:"Bengaluru",mode:"Office",exp:"0 yrs",vac:6,posted:"12 Nov 2026"},
+ {t:"Back Office Executive",cat:"Non-IT",lvl:"Fresher",loc:"Chennai",mode:"Office",exp:"0 yrs",vac:18,posted:"11 Nov 2026"},
+ {t:"HR Recruiter",cat:"Non-IT",lvl:"Experienced",loc:"Hyderabad",mode:"Hybrid",exp:"1–3 yrs",vac:5,posted:"13 Nov 2026"},
+ {t:"Business Development Executive",cat:"Non-IT",lvl:"Experienced",loc:"Mumbai",mode:"Office",exp:"1–4 yrs",vac:9,posted:"10 Nov 2026"},
+ {t:"BPO Team Leader",cat:"Non-IT",lvl:"Experienced",loc:"Noida",mode:"Office",exp:"3–5 yrs",vac:3,posted:"08 Nov 2026"},
+ {t:"Accounts Executive",cat:"Non-IT",lvl:"Experienced",loc:"Pune",mode:"Office",exp:"1–3 yrs",vac:6,posted:"12 Nov 2026"}
+];
+var grid=document.getElementById("jobsGrid");
+function renderJobs(filter){
+  var list=JOBS.filter(function(j){return filter==="all"||j.cat===filter||j.lvl===filter});
+  document.getElementById("jobsEmpty").style.display=list.length?"none":"block";
+  grid.innerHTML=list.map(function(j,i){
+    return '<article class="job" style="animation-delay:'+(i*60)+'ms">'
+    +'<div class="job-tags"><span class="pill '+(j.cat==="IT"?"it":"nonit")+'">'+j.cat+'</span><span class="pill lvl">'+j.lvl+'</span></div>'
+    +'<h3>'+j.t+'</h3><span class="co">🏢 Top MNC · Sample listing for this draft</span>'
+    +'<div class="job-meta"><span>📍 <b>'+j.loc+'</b></span><span>🏠 <b>'+j.mode+'</b></span>'
+    +'<span>💼 Exp: <b>'+j.exp+'</b></span><span>👥 Vacancies: <b>'+j.vac+'</b></span>'
+    +'<span>🗓 Posted: <b>'+j.posted+'</b></span><span>💰 <b>As per company norms</b></span></div>'
+    +'<button class="btn btn-primary" data-apply="'+j.t.replace(/"/g,"")+'">Apply for this role →</button></article>';
+  }).join("");
+  grid.querySelectorAll("[data-apply]").forEach(function(b){b.addEventListener("click",function(){applyFor(b.getAttribute("data-apply"))})});
+}
+renderJobs("all");
+document.querySelectorAll(".filters button").forEach(function(b){b.addEventListener("click",function(){
+  document.querySelectorAll(".filters button").forEach(function(x){x.classList.remove("on")});b.classList.add("on");renderJobs(b.getAttribute("data-filter"));
+})});
+
+/* Applying For select */
+var openingSel=document.getElementById("fOpening");
+openingSel.innerHTML='<option>General Placement</option>'+JOBS.map(function(j){return '<option>'+j.t+'</option>'}).join("");
+function applyFor(title){
+  var found=false;
+  [].forEach.call(openingSel.options,function(o){if(o.text===title){openingSel.value=o.value||o.text;openingSel.selectedIndex=o.index;found=true}});
+  if(!found)openingSel.selectedIndex=0;
+  document.getElementById("apply").scrollIntoView({behavior:reduceMotion?"auto":"smooth"});
+  openingSel.style.boxShadow="0 0 0 3px rgba(245,197,81,.5)";setTimeout(function(){openingSel.style.boxShadow=""},1800);
+}
+
+/* ===== Apply form dynamic logic ===== */
+var IT_DOMAINS=["Java","Python","Full Stack","Frontend","Testing (Manual)","Testing (Automation)","Data Analyst","Data Science","Cloud / DevOps","Technical Support","Other"];
+var NONIT_DOMAINS=["HR","Customer Support / BPO (Voice)","BPO (Non-Voice)","Sales / Business Development","Marketing","Finance / Accounts","Back Office / Operations","Other"];
+var domainSel=document.getElementById("fDomain");
+function fillDomains(cat){domainSel.innerHTML=(cat==="IT"?IT_DOMAINS:NONIT_DOMAINS).map(function(d){return '<option>'+d+'</option>'}).join("")}
+fillDomains("IT");
+var getLevel=seg("levelSeg",function(v){document.getElementById("expYearsField").classList.toggle("hidden-field",v!=="Experienced")});
+var getCat=seg("catSeg",function(v){fillDomains(v)});
+var getMiniLevel=seg("miniSeg",null);
+
+function waLink(text){return "https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent(text)}
+
+/* Mini form */
+document.getElementById("miniForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  var name=document.getElementById("miniName").value.trim(),phone=document.getElementById("miniPhone").value.trim();
+  if(!name||!phone){showToast("Please enter your name and mobile number.");return}
+  var msg="Hi, I am "+name+". Please call me back about placements.\nMobile: "+phone+"\nI am a: "+getMiniLevel();
+  document.getElementById("miniWa").href=waLink(msg);
+  this.style.display="none";document.getElementById("miniSuccess").classList.add("show");
+});
+
+/* Apply form submit */
+document.getElementById("applyForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  var name=document.getElementById("fName").value.trim(),phone=document.getElementById("fPhone").value.trim();
+  if(!name||!phone){showToast("Please fill your Full Name and Mobile / WhatsApp number.");return}
+  var lvl=getLevel(),lines=[
+    "New Application — ApexHire Placements",
+    "Name: "+name,"Mobile: "+phone,
+    "Email: "+(document.getElementById("fEmail").value.trim()||"-"),
+    "I am a: "+lvl+(lvl==="Experienced"?" ("+document.getElementById("fExpYears").value+")":""),
+    "Category: "+getCat(),"Interested Domain: "+domainSel.value,
+    "Current Domain: "+(document.getElementById("fCurrent").value.trim()||"-"),
+    "Qualification: "+document.getElementById("fQual").value,
+    "Need Training: "+document.getElementById("fTraining").value,
+    "Changing Domain: "+document.getElementById("fChange").value,
+    "Preferred Location: "+(document.getElementById("fLoc").value.trim()||"-"),
+    "Applying For: "+openingSel.value,
+    "Message: "+(document.getElementById("fMsg").value.trim()||"-")
+  ];
+  document.getElementById("applyWa").href=waLink(lines.join("\n"));
+  this.style.display="none";document.getElementById("applySuccess").classList.add("show");
+  document.getElementById("applySuccess").scrollIntoView({behavior:"smooth",block:"center"});
+});
+document.getElementById("applyAgain").addEventListener("click",function(){
+  document.getElementById("applySuccess").classList.remove("show");
+  var f=document.getElementById("applyForm");f.reset();f.style.display="";fillDomains(getCat());
+});
+
+/* Inline toast (no native dialogs in sandbox) */
+function showToast(text){
+  var old=document.getElementById("inlineToast");if(old)old.remove();
+  var d=document.createElement("div");d.id="inlineToast";
+  d.style.cssText="position:fixed;left:50%;bottom:170px;transform:translateX(-50%);z-index:150;background:#3b1030;border:1px solid #f472b6;color:#ffe4f1;padding:13px 20px;border-radius:13px;font-weight:700;font-size:.9rem;box-shadow:0 16px 40px rgba(0,0,0,.5);max-width:calc(100vw - 32px);text-align:center";
+  d.textContent="⚠ "+text;document.body.appendChild(d);setTimeout(function(){d.remove()},3200);
+}
+
+/* ===== Timeline ===== */
+var tl=document.getElementById("timeline"),steps=tl.querySelectorAll(".step");
+var tio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+  tl.classList.add("go");
+  steps.forEach(function(s,i){setTimeout(function(){s.classList.add("lit")},reduceMotion?0:280*i+200)});
+  tio.disconnect();
+}})},{threshold:0.25});
+tio.observe(tl);
+
+/* ===== Find Your Path ===== */
+var answers={},curStep=1;
+var stepEls=document.querySelectorAll(".fstep");
+function showStep(n,back){
+  curStep=n;
+  stepEls.forEach(function(s){s.classList.remove("on","back");if(+s.getAttribute("data-step")===n)s.classList.add(back?"back":"on")});
+  for(var i=1;i<=3;i++)document.getElementById("fp"+i).classList.toggle("on",n>i||n===4);
+  document.getElementById("finderBack").style.visibility=n>1&&n<4?"visible":"hidden";
+  document.getElementById("finderRestart").style.visibility=n===4?"visible":"hidden";
+  if(n===4)buildResult();
+}
+document.querySelectorAll(".opt").forEach(function(b){b.addEventListener("click",function(){
+  var g=b.getAttribute("data-group");answers[g]=b.getAttribute("data-v");
+  document.querySelectorAll('.opt[data-group="'+g+'"]').forEach(function(x){x.classList.remove("sel")});b.classList.add("sel");
+  setTimeout(function(){if(curStep<3)showStep(curStep+1);else showStep(4)},reduceMotion?30:260);
+})});
+document.getElementById("finderBack").addEventListener("click",function(){if(curStep>1)showStep(curStep-1,true)});
+document.getElementById("finderRestart").addEventListener("click",function(){
+  answers={};document.querySelectorAll(".opt").forEach(function(x){x.classList.remove("sel")});showStep(1,true);
+});
+function buildResult(){
+  var matches=JOBS.filter(function(j){return j.cat===answers.cat&&j.lvl===answers.level});
+  var shown=(matches.length?matches:JOBS.filter(function(j){return j.cat===answers.cat})).slice(0,3);
+  document.getElementById("recTitle").textContent="For a "+answers.qual+" "+answers.level.toLowerCase()+" interested in "+answers.cat+":";
+  var train=answers.level==="Fresher"?"Start with job-focused training in your chosen "+answers.cat+" domain, then interviews.":(answers.cat==="IT"?"Skill-upgrade training is available if you are switching or upskilling.":"Domain training and interview preparation are included.");
+  document.getElementById("recList").innerHTML=
+    "<li><b style='color:var(--ink)'>Your openings:</b> "+shown.map(function(j){return j.t}).join(" · ")+"</li>"
+    +"<li><b style='color:var(--ink)'>Your training path:</b> "+train+"</li>"
+    +"<li><b style='color:var(--ink)'>Your fee:</b> Nothing now — placement fee applies only after you join.</li>";
+  document.getElementById("recView").onclick=function(){
+    var f=answers.level==="Experienced"?"Experienced":(answers.level==="Fresher"?"Fresher":answers.cat);
+    document.querySelectorAll(".filters button").forEach(function(x){x.classList.toggle("on",x.getAttribute("data-filter")===f)});
+    renderJobs(f);document.getElementById("openings").scrollIntoView({behavior:reduceMotion?"auto":"smooth"});
+  };
+}
+
+/* ===== FAQ ===== */
+document.querySelectorAll(".faq-item").forEach(function(item){
+  var q=item.querySelector(".faq-q"),a=item.querySelector(".faq-a");
+  q.addEventListener("click",function(){
+    var open=item.classList.contains("open");
+    document.querySelectorAll(".faq-item").forEach(function(x){x.classList.remove("open");x.querySelector(".faq-a").style.maxHeight=null;x.querySelector(".faq-q").setAttribute("aria-expanded","false")});
+    if(!open){item.classList.add("open");a.style.maxHeight=a.scrollHeight+"px";q.setAttribute("aria-expanded","true")}
+  });
+});
+
+/* ===== Chatbot dummy (panel built on first tap) ===== */
+var chatBtn=document.getElementById("chatBtn"),chatPanel=null;
+function buildChatPanel(){
+  var p=document.createElement("div");p.className="chat-panel";p.id="chatPanel";p.setAttribute("role","dialog");p.setAttribute("aria-label","Chat assistant");
+  p.innerHTML='<button class="chat-close" id="chatClose" aria-label="Close chat">✕</button>'
+    +'<h3>Hi! 👋 I\'m your placement assistant</h3>'
+    +'<p>Our smart chat assistant is <strong style="color:var(--gold)">coming soon</strong>. Until then, a real counsellor can help you right away — pick whichever is easier:</p>'
+    +'<div class="row"><a class="btn btn-gold" href="'+waLink("Hi, I have a question about placements")+'" target="_blank" rel="noopener">💬 Continue on WhatsApp</a>'
+    +'<a class="btn btn-primary" href="#apply" id="chatApply">📝 Fill the Apply Form</a></div>';
+  document.getElementById("chatMount").appendChild(p);
+  p.querySelector("#chatClose").addEventListener("click",function(){toggleChat(false)});
+  p.querySelector("#chatApply").addEventListener("click",function(){toggleChat(false)});
+  return p;
+}
+function toggleChat(force){
+  if(!chatPanel)chatPanel=buildChatPanel();
+  var open=typeof force==="boolean"?force:!chatPanel.classList.contains("open");
+  if(open){chatPanel.style.display="block";requestAnimationFrame(function(){requestAnimationFrame(function(){chatPanel.classList.add("open")})});}
+  else{chatPanel.classList.remove("open");setTimeout(function(){if(chatPanel&&!chatPanel.classList.contains("open"))chatPanel.style.display="none"},380);}
+  chatBtn.setAttribute("aria-expanded",open);
+}
+chatBtn.addEventListener("click",function(){toggleChat()});
+document.addEventListener("click",function(e){if(chatPanel&&chatPanel.classList.contains("open")&&!chatPanel.contains(e.target)&&!chatBtn.contains(e.target))toggleChat(false)});
+})();
+</script>
+</body>
+</html>
